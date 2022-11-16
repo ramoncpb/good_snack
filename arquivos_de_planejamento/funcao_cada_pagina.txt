@@ -1,0 +1,25 @@
+index.php é a página responsável pelo login
+
+pagina_inicial.php é a página responsável pelo menu
+
+novo_cliente.php é a página responsável por conter um fomulário para cadastrar um cliente
+
+novo_produto.php é a página responsável por conter um formulário para cadastrar produtos
+
+solicita_pedido.php é a página responsável por oferecer os clientes e produtos cadastrados como opção para preencher um formulário que irá gerar um resumo do pedido com ambas as informações
+
+pedido_solicitado.php é a página responsável por conter um formulário para cadastrar pedidos
+
+pesquisa_cliente.php é a página responsável por exibir todos os clientes e oferecer opção de excluir ou editar
+
+pesquisa_produto.php é a página responsável por eibir todos os produtos cadastrados e oferecer a opção de excluir ou editar
+
+pedido_cancelado.php é a página responsável por listar os pedidos que foram cancelados
+
+pedido_entregue.php é a página responsável por listar os pedidos que foram finalizados
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+O programa deverá ser um administrador de lanchonetes básico, desenvolvido com o intuíto de treinar meus conhecimentos em PHP, HTML, PDO, BOOTSTRAP, CSS, JAVASCRIPT, entre outras ferramentas que possam ser necessárias para a execução do projeto.
+
+Terá uma página principal que será disponibilizada após a confirmação de um login com uma descrição da ferramenta e um menu que irá encaminhar para as funcionalidades que estão listadas abaixo.
+
+PÁGINA LOGIN:
+Terá Usuário e senha.
+Com um cenário simples apresentando apenas a logo do projeto e da empresa desenvolvedora com cabeçalho e rodapé.
+
+
+MENU:
+
+Nossos Clientes.
+	-Novo Cliente
+	-Pesquisar Cliente
+		-Editar Cliente
+		-Excluir Cliente
+
+Nossos Produtos.
+	-Novo Produto
+	-Pesquisar Produto
+		-Editar Produto
+		-Excluir Produto
+
+Solicitações.
+	-Solicitar Pedidos
+	-Pedidos Solicitados
+		-Cacelar Pedido
+	-Pedidos Cancelados
+	-Pedidos Entregues
+
+

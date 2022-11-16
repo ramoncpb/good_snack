@@ -1,0 +1,6 @@
+Cores da empresa:
+
+Preto: #000000
+Cinza: #393E46
+Verde: #A7D129
+Branco: #EEEEEE
