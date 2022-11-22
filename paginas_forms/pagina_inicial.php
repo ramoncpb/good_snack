@@ -20,10 +20,10 @@
         ?>
     </header>
 
-    <body>
-        <div class="card">
+    <body style="background-color:beige;">
+        <div class="card" style="margin: 40px;">
         <div class="card-body">
-            A ferramenta GoodSnack's foi desenvolvida pela LuminousDev com a intenção de ajudar o seu comércio de lancher ir além, administrando ingredientes, pedidos e clientes. Tornando assim o trabalho mais fácil, rápido e eficiente! Obrigado por nos escolher.
+            <p style="font-size: 13pt; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center; margin: 230px;">A ferramenta GoodSnack's foi desenvolvida pela LuminousDev com a intenção de ajudar o seu comércio de lanches ir além, administrando ingredientes, pedidos e clientes. Tornando assim o trabalho mais fácil, rápido e eficiente. Obrigado por nos escolher!!!</p>
         </div>
         </div>
         

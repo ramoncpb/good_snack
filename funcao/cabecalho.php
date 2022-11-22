@@ -40,7 +40,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">GoodSnack's</a>
+    <a class="navbar-brand" href="../paginas_forms/pagina_inicial.php"><img class="logo" src='../img/GoodSnackNoMargin' height="40" /></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -88,16 +88,16 @@
   </div>
   
 </nav>
-  <div class="container-fluid">
+  <div class="container-fluid" style="background-color:#393E46">
   <div class="row">
     <div class="col">
-      <output id="hora"></output>
+      <output id="hora" style="margin-left:5%; margin-top:1%; color: #EEEEEE"></output>
     </div>
     <div class="col">
-      Bem-Vindo!
+      <p style="text-align:center; margin-top:1%; color:#EEEEEE">Bem-Vindo!</p>
     </div>
-    <div class="col">
-      <output id="data"></output>
+    <div class="col" >
+      <output id="data" style="margin-left: 80%; margin-top:1%; color:#EEEEEE"></output>
     </div>
   </div>
   </div>

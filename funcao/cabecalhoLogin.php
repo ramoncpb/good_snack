@@ -45,47 +45,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Clientes
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="novo_cliente.php">Novo Cliente</a></li>
-            <li><a class="dropdown-item" href="pesquisa_cliente.php">Meus Clientes</a></li>
-            
-          </ul>
-        </li>
-      </ul>
 
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Pedidos
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="pedido_solicitado.php">Solicitação de Pedidos</a></li>
-            <li><a class="dropdown-item" href="pedido_entregue.php">Pedidos Entregues</a></li>
-            <li><a class="dropdown-item" href="pedido_cancelado.php">Pedidos Cancelados</a></li>
-            <li><a class="dropdown-item" href="pesquisa_pedido.php">Pedidos Solicitados</a></li>
-          </ul>
-        </li>
-      </ul>
+  
 
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Produtos
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="novo_produto.php">Novo Produto</a></li>
-            <li><a class="dropdown-item" href="pesquisa_produto.php">Meus Produtos</a></li>
-            
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
   
 </nav>
   <div class="container-fluid" style="background-color:#393E46; height:45px">
@@ -94,10 +56,7 @@
       <output id="hora" style="margin-left:5%; margin-top:1%; color: #EEEEEE"></output>
     </div>
     <div class="col" style="margin:3px">
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-        <button class="btn btn-outline-dark" style="border-color:#EEEEEE" type="submit">🔍</button>
-      </form>
+      <p style="text-align:center; margin-left:5%; margin-top:1%; color: #EEEEEE">Faça Login</p>
     </div>
     <div class="col" >
       <output id="data" style="margin-left: 80%; margin-top:1%; color:#EEEEEE"></output>
