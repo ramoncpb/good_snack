@@ -23,7 +23,32 @@
     <body style="background-color:beige;">
         <div class="card" style="margin: 40px;">
         <div class="card-body">
-            <p style="font-size: 13pt; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center; margin: 230px;">
+            <form>
+                <label for="fnome">Nome:</label><br>
+                <input type="text" id="fnome" name="fnome" placeholder="Nome"><br>
+
+                <label for="fsobr">Sobrenome:</label><br>
+                <input type="text" id="fsobr" name="fsobr" placeholder="Sobrenome"><br>
+
+                <label for="fcpf">CPF:</label><br>
+                <input type="text" id="fcpf" name="fcpf" placeholder="xxx.xxx.xxx-xx"><br>
+
+                <label for="fnasc">Data de Nascimento:</label><br>
+                <input type="date" id="fnasc" name="fnasc"><br>
+
+                <input type="radio" id="fsexo" name="fsexo" value="M">
+                <label for="Mas">Masculino</label>
+                <input type="radio" id="fsexo" name="fsexo" value="F">
+                <label for="Fem">Feminino</label>
+                <input type="radio" id="fsexo" name="fsexo" value="O">
+                <label for="Out">Outro</label><br>
+
+                <label for="ftel">Telefone:</label><br>
+                <input type="tel" id="ftel" name="ftel" placeholder="(xx)xxxxx-xxxx"><br>
+
+
+
+            </form>
         </div>
         </div>
         
