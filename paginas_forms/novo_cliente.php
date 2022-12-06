@@ -46,7 +46,30 @@
                 <label for="ftel">Telefone:</label><br>
                 <input type="tel" id="ftel" name="ftel" placeholder="(xx)xxxxx-xxxx"><br>
 
+                <label for="fcep">CEP:</label><br>
+                <input type="text" id="fcep" name="fcep" placeholder="xxxxx-xxx"><br>
 
+                <label for="frua">Rua:</label><br>
+                <input type="text" id="frua" name="frua" placeholder="R.Nome da Rua"><br>
+
+                <label for="fnum">Número:</label><br>
+                <input type="text" id="fnum" name="fnum" placeholder="Num e complemento"><br>
+
+                <label for="fbairro">Bairro:</label><br>
+                <input type="text" id="fbairro" name="fbairro" placeholder="Nome do bairro"><br>
+
+                <label for="fest">Estado:</label><br>
+                <input type="text" id="fest" name="fest" placeholder="Estado"><br>
+
+                <label for="fcid">Cidade:</label><br>
+                <input type="text" id="fcid" name="fcid" placeholder="Cidade"><br>
+
+                <label for="femail">E-mail:</label><br>
+                <input type="text" id="femail" name="femail" placeholder="E-mail"><br>
+
+                <div><br>
+                    <button class="btn btn-dark" type="submit"> Cadastrar</button>
+                </div>
 
             </form>
         </div>

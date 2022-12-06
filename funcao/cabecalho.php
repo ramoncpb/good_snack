@@ -84,6 +84,13 @@
           </ul>
         </li>
       </ul>
+
+      <ul class="navbar-nav">
+          <a class="nav-link" href="login.php" role="button" aria-expanded="false">
+            Login
+          </a>
+      </ul>
+
     </div>
   </div>
   

@@ -23,7 +23,36 @@
     <body style="background-color:beige;">
         <div class="card" style="margin: 40px;">
         <div class="card-body">
-            <p style="font-size: 13pt; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center; margin: 230px;">
+        <form>
+                <label for="pnome">Nome:</label><br>
+                <input type="text" id="pnome" name="pnome" placeholder="Nome do produto"><br>
+
+                <label for="pcode">Código:</label><br>
+                <input type="text" id="pcode" name="pcode" placeholder="Codigo do produto"><br>
+
+                <label for="pcusto">Custo:</label><br>
+                <input type="text" id="pcusto" name="pcusto" placeholder="Custo do Produto"><br>
+
+                <label for="pval">Preço:</label><br>
+                <input type="text" id="pval" name="pval" placeholder="Valor do produto"><br>
+
+                <label for="ptipo">Tipo:</label><br>
+                <select name="ptipo">
+                    <option value="Comida">Comida</option>
+                    <option value="Bebida">Bebida</option>
+                </select><br>
+
+                <label for="pestoque">Estoque:</label><br>
+                <input type="text" id="pestoque" name="pestoque" placeholder="Qtd.Produtos"><br>
+
+                <label for="pmarca">Marca:</label><br>
+                <input type="text" id="pmarca" name="pmarca" placeholder="Marca do produto"><br>
+
+                <div><br>
+                    <button class="btn btn-dark" type="submit"> Cadastrar</button>
+                </div>
+
+            </form>
         </div>
         </div>
         
