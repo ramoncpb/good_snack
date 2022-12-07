@@ -101,7 +101,7 @@
     </div>
     <div class="col" style="margin:3px">
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+        <input class="form-control me-2;" type="search" placeholder="Pesquisar" aria-label="Search">
         <button class="btn btn-outline-dark" style="border-color:#EEEEEE" type="submit">🔍</button>
       </form>
     </div>

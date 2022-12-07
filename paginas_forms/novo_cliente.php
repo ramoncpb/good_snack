@@ -30,6 +30,9 @@
                 <label for="fsobr">Sobrenome:</label><br>
                 <input type="text" id="fsobr" name="fsobr" placeholder="Sobrenome"><br>
 
+                <label for="femail">E-mail:</label><br>
+                <input type="text" id="femail" name="femail" placeholder="E-mail"><br>
+
                 <label for="fcpf">CPF:</label><br>
                 <input type="text" id="fcpf" name="fcpf" placeholder="xxx.xxx.xxx-xx"><br>
 
@@ -64,8 +67,6 @@
                 <label for="fcid">Cidade:</label><br>
                 <input type="text" id="fcid" name="fcid" placeholder="Cidade"><br>
 
-                <label for="femail">E-mail:</label><br>
-                <input type="text" id="femail" name="femail" placeholder="E-mail"><br>
 
                 <div><br>
                     <button class="btn btn-dark" type="submit"> Cadastrar</button>

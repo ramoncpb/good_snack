@@ -23,10 +23,43 @@
     <body style="background-color:beige;">
         <div class="card" style="margin: 40px;">
         <div class="card-body">
-            <p style="font-size: 13pt; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center; margin: 230px;">
+            <table class="table table-dark">
+                <tr class="table-active">
+                    <td>Nome</td>
+                    <td>Sobrenome</td>
+                    <td>E-mail</td>
+                    <td>CPF</td>
+                    <td>Data de Nascimento</td>
+                    <td>Sexo</td>
+                    <td>Telefone</td>
+                    <td>CEP</td>
+                    <td>Rua</td>
+                    <td>Casa</td>
+                    <td>Bairro</td>
+                    <td>Estado</td>
+                    <td>Cidade</td>
+                    <td style="text-align: center">Ações</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="">Editar</a> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="">Excluir</a> </td>
+                </tr>
+            </table>
         </div>
         </div>
-        
+
 
 
         
