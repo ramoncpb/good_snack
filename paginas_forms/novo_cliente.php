@@ -1,3 +1,8 @@
+<?php
+    require_once '../classes/class-cliente.php';
+    $p = new Cliente("bd_gdsnack","localhost","root","");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -19,25 +24,50 @@
             include_once '../funcao/cabecalhoNav.php';
         ?>
     </header>
-
     <body style="background-color:beige;">
+    <?php
+        if(isset($_POST['fnome'])){
+            $fnome = addslashes($_POST['fnome']);
+            $fsobr = addslashes($_POST['fsobr']);
+            $femail = addslashes($_POST['femail']);
+            $fcpf = addslashes($_POST['fcpf']);
+            $fnasc = addslashes($_POST['fnasc']);
+            $fsexo = addslashes($_POST['fsexo']);
+            $ftel = addslashes($_POST['ftel']);
+            $fcep = addslashes($_POST['fcep']);
+            $frua = addslashes($_POST['frua']);
+            $fnum = addslashes($_POST['fnum']);
+            $fbairro = addslashes($_POST['fbairro']);
+            $fest = addslashes($_POST['fest']);
+            $fcid= addslashes($_POST['fcid']);
+            if (!empty($fnome) && !empty($fsobr) && !empty($femail) && !empty($fcpf) && !empty($fnasc) && !empty($ftel) && !empty($fcep) && !empty($frua) && !empty($fnum) && !empty($fbairro )){
+                //Cadastro do cliente
+                if(!$p->cadastrarCliente($fnome, $fsobr, $femail, $fcpf, $fnasc, $fsexo, $ftel, $fcep, $frua, $fnum, $fbairro, $fest, $fcid)){
+                    echo "E-mail já está cadastrado!";
+                }
+            }else{
+                echo "Preencha todos os campos obrigatórios";
+            }
+
+        }
+    ?>
         <div class="card" style="margin: 40px;">
         <div class="card-body">
-            <form>
+            <form method="POST">
                 <label for="fnome">Nome:</label><br>
-                <input type="text" id="fnome" name="fnome" placeholder="Nome"><br>
+                <input type="text" id="fnome" name="fnome" placeholder="Nome" required ><br>
 
                 <label for="fsobr">Sobrenome:</label><br>
-                <input type="text" id="fsobr" name="fsobr" placeholder="Sobrenome"><br>
+                <input type="text" id="fsobr" name="fsobr" placeholder="Sobrenome" required ><br>
 
                 <label for="femail">E-mail:</label><br>
-                <input type="text" id="femail" name="femail" placeholder="E-mail"><br>
+                <input type="text" id="femail" name="femail" placeholder="E-mail" required ><br>
 
                 <label for="fcpf">CPF:</label><br>
-                <input type="text" id="fcpf" name="fcpf" placeholder="xxx.xxx.xxx-xx"><br>
+                <input type="text" id="fcpf" name="fcpf" placeholder="xxx.xxx.xxx-xx" required ><br>
 
                 <label for="fnasc">Data de Nascimento:</label><br>
-                <input type="date" id="fnasc" name="fnasc"><br>
+                <input type="date" id="fnasc" name="fnasc" required ><br>
 
                 <input type="radio" id="fsexo" name="fsexo" value="M">
                 <label for="Mas">Masculino</label>
@@ -47,19 +77,19 @@
                 <label for="Out">Outro</label><br>
 
                 <label for="ftel">Telefone:</label><br>
-                <input type="tel" id="ftel" name="ftel" placeholder="(xx)xxxxx-xxxx"><br>
+                <input type="tel" id="ftel" name="ftel" placeholder="(xx)xxxxx-xxxx" required ><br>
 
                 <label for="fcep">CEP:</label><br>
-                <input type="text" id="fcep" name="fcep" placeholder="xxxxx-xxx"><br>
+                <input type="text" id="fcep" name="fcep" placeholder="xxxxx-xxx" required ><br>
 
                 <label for="frua">Rua:</label><br>
-                <input type="text" id="frua" name="frua" placeholder="R.Nome da Rua"><br>
+                <input type="text" id="frua" name="frua" placeholder="R.Nome da Rua" required ><br>
 
                 <label for="fnum">Número:</label><br>
-                <input type="text" id="fnum" name="fnum" placeholder="Num e complemento"><br>
+                <input type="text" id="fnum" name="fnum" placeholder="Num e complemento" required ><br>
 
                 <label for="fbairro">Bairro:</label><br>
-                <input type="text" id="fbairro" name="fbairro" placeholder="Nome do bairro"><br>
+                <input type="text" id="fbairro" name="fbairro" placeholder="Nome do bairro" required ><br>
 
                 <label for="fest">Estado:</label><br>
                 <input type="text" id="fest" name="fest" placeholder="Estado"><br>

@@ -1,3 +1,9 @@
+<?php
+    require_once '../classes/class-cliente.php';
+    $p = new Cliente("bd_gdsnack","localhost","root","");
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -24,7 +30,7 @@
         <div class="card" style="margin: 40px;">
         <div class="card-body">
             <table class="table table-dark">
-                <tr class="table-active">
+                
                     <td>Nome</td>
                     <td>Sobrenome</td>
                     <td>E-mail</td>
@@ -38,24 +44,27 @@
                     <td>Bairro</td>
                     <td>Estado</td>
                     <td>Cidade</td>
-                    <td style="text-align: center">Ações</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="">Editar</a> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="">Excluir</a> </td>
-                </tr>
+                    <td style="text-align: center">Ações</td>   
+
+<?php
+    $dados = $p->buscarDados();
+    if(count($dados) > 0){//Se tem pessoas no banco
+        for($i=0; $i< count($dados); $i++){
+            echo "<tr>";
+            foreach($dados[$i] as $key => $value){
+                if($key != "id"){
+                    echo"<td>".$value."</td>";
+                }
+            }
+            ?><td> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="">Editar</a> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="">Excluir</a> </td><?php
+            echo "</tr>";
+        }
+       
+    }else{//O banco está vazio
+        echo"Ainda não há pessoas cadastradas";
+    }
+    
+?>
             </table>
         </div>
         </div>
