@@ -43,7 +43,7 @@
             if (!empty($fnome) && !empty($fsobr) && !empty($femail) && !empty($fcpf) && !empty($fnasc) && !empty($ftel) && !empty($fcep) && !empty($frua) && !empty($fnum) && !empty($fbairro )){
                 //Cadastro do cliente
                 if(!$p->cadastrarCliente($fnome, $fsobr, $femail, $fcpf, $fnasc, $fsexo, $ftel, $fcep, $frua, $fnum, $fbairro, $fest, $fcid)){
-                    echo "E-mail já está cadastrado!";
+                    echo "Cliente já está cadastrado!";
                 }
             }else{
                 echo "Preencha todos os campos obrigatórios";
@@ -55,7 +55,7 @@
         <div class="card-body">
             <form method="POST">
                 <label for="fnome">Nome:</label><br>
-                <input type="text" id="fnome" name="fnome" placeholder="Nome" required ><br>
+                <input type="text" id="fnome" name="fnome" placeholder="Nome" required value="<?php if(isset($res)){echo $res['fnome'];}?>"><br>
 
                 <label for="fsobr">Sobrenome:</label><br>
                 <input type="text" id="fsobr" name="fsobr" placeholder="Sobrenome" required ><br>

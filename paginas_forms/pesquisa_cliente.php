@@ -25,6 +25,13 @@
             include_once '../funcao/cabecalhoNav.php';
         ?>
     </header>
+    <?php
+    //VERIFICAÇÃO PARA REALIZAR O UPDATE
+        if(isset($_GET['fcpf_update'])){
+            $fcpf_update = addslashes($_GET['fcpf_update']);
+            $res = $p->buscarDadosCliente($fcpf_update);
+        }
+    ?>
 
     <body style="background-color:beige;">
         <div class="card" style="margin: 40px;">
@@ -56,7 +63,7 @@
                     echo"<td>".$value."</td>";
                 }
             }
-            ?><td> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="">Editar</a> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="">Excluir</a> </td><?php
+            ?><td> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="pesquisa_cliente.php?fcpf_update=<?php echo $dados[$i]['fcpf'];?>">Editar</a> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="pesquisa_cliente.php?fcpf=<?php echo $dados[$i]['fcpf'];?>">Excluir</a> </td><?php
             echo "</tr>";
         }
        
@@ -81,3 +88,16 @@
     </footer>
 
 </html>
+
+<?php
+//Exclusão do cliente
+    if(isset($_GET['fcpf'])){
+        $fcpf_cliente = addslashes($_GET['fcpf']);
+        $p->excluirCliente($fcpf_cliente);
+        ?>
+        <script>
+            window.location.href="pesquisa_cliente.php"
+        </script>
+        <?php
+    }
+?>

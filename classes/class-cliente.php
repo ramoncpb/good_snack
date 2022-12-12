@@ -34,5 +34,23 @@
 
         }
 
+        public function excluirCliente($fcpf)
+        {
+            $cmd = $this->pdo->query("DELETE FROM tb_cliente WHERE fcpf = $fcpf");
+
+        }
+
+        //BUSCAR DADOS DE UMA PESSOA
+        public function buscarDadosCliente($fcpf){
+            $res = array();
+            $cmd = $this->pdo->query("SELECT * FROM tb_cliente WHERE fcpf = $fcpf");
+            $res = $cmd->fetch(PDO::FETCH_ASSOC);
+            return $res;
+        }
+
+        //ATUALIZAR DADOS NO BANCO DE DADOS
+        public function atualizarDados(){
+
+        }
     }
 ?>
