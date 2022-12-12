@@ -24,11 +24,11 @@
 
         //Funcao para cadastrar o cliente
         public function cadastrarCliente($fnome, $fsobr, $femail, $fcpf, $fnasc, $fsexo, $ftel, $fcep, $frua, $fnum, $fbairro, $fest, $fcid){
-            $cmd = $this->pdo->query("SELECT fcpf from tb_cliente WHERE fcpf = fcpf");
+            $cmd = $this->pdo->query("SELECT fcpf from tb_cliente WHERE fcpf = $fcpf");
             if($cmd->rowCount() > 0){//CLiente já cadastrado
                 return false;
             }else{ //Cliente não cadastrado
-                $cmd = $this->pdo->query("INSERT INTO tb_cliente (fnome, fsobr, femail, fcpf, fnasc, fsexo, ftel, fcep, frua, fnum, fbairro, fest, fcid) VALUES (:fnome, :fsobr, :femail, :fcpf, :fnasc, :fsexo, :ftel, :fcep, :frua, :fnum, :fbairro, :fest, :fcid)");
+                $cmd = $this->pdo->query("INSERT INTO tb_cliente (fnome, fsobr, femail, fcpf, fnasc, fsexo, ftel, fcep, frua, fnum, fbairro, fest, fcid) VALUES ('$fnome', '$fsobr', '$femail', '$fcpf', '$fnasc', '$fsexo', '$ftel', '$fcep', '$frua', $fnum, '$fbairro', '$fest', '$fcid')");
                     return true;
             }
 
