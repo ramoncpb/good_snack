@@ -25,13 +25,7 @@
             include_once '../funcao/cabecalhoNav.php';
         ?>
     </header>
-    <?php
-    //VERIFICAÇÃO PARA REALIZAR O UPDATE
-        if(isset($_GET['fcpf_update'])){
-            $fcpf_update = addslashes($_GET['fcpf_update']);
-            $res = $p->buscarDadosCliente($fcpf_update);
-        }
-    ?>
+   
 
     <body style="background-color:beige;">
         <div class="card" style="margin: 40px;">
@@ -63,22 +57,22 @@
                     echo"<td>".$value."</td>";
                 }
             }
-            ?><td> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="pesquisa_cliente.php?fcpf_update=<?php echo $dados[$i]['fcpf'];?>">Editar</a> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="pesquisa_cliente.php?fcpf=<?php echo $dados[$i]['fcpf'];?>">Excluir</a> </td><?php
+            ?><td> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="cliente-update.php?fcpf_update=<?php echo $dados[$i]['fcpf'];?>">Editar</a> <a style="background-color:white; color:black; padding:5px; margin: 0px 5px; text-decoration: none" href="pesquisa_cliente.php?fcpf=<?php echo $dados[$i]['fcpf'];?>">Excluir</a> </td><?php
             echo "</tr>";
         }
        
     }else{//O banco está vazio
-        echo"Ainda não há pessoas cadastradas";
+        ?>
+            </table>
+            <div class="aviso">
+                <h4>🍃 Ainda não há pessoas cadastradas</h4>
+            </div>
+        <?php
     }
     
 ?>
-            </table>
         </div>
-        </div>
-
-
-
-        
+    </div> 
     </body>
 
     <footer>

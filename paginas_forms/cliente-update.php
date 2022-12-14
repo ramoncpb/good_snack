@@ -26,7 +26,13 @@
     </header>
     <body style="background-color:beige;">
     <?php
-        if(isset($_POST['fnome'])){//VERIFICAÇÃO SE CLICOU PARA CADASTRAR
+    
+        //VERIFICAÇÃO SE CLICOU PARA PARA REALIZAR O UPDATE
+        if(isset($_GET['fcpf_update'])){
+            $fcpf_update = addslashes($_GET['fcpf_update']);
+            $res = $p->buscarDadosCliente($fcpf_update);
+
+            $cpf_upd = addslashes($_GET['fcpf_update']);
             $fnome = addslashes($_POST['fnome']);
             $fsobr = addslashes($_POST['fsobr']);
             $femail = addslashes($_POST['femail']);
@@ -42,66 +48,65 @@
             $fcid= addslashes($_POST['fcid']);
             if (!empty($fnome) && !empty($fsobr) && !empty($femail) && !empty($fcpf) && !empty($fnasc) && !empty($ftel) && !empty($fcep) && !empty($frua) && !empty($fnum) && !empty($fbairro )){
                 //Cadastro do cliente
-                if(!$p->cadastrarCliente($fnome, $fsobr, $femail, $fcpf, $fnasc, $fsexo, $ftel, $fcep, $frua, $fnum, $fbairro, $fest, $fcid)){
-                    ?>
-                        <div class="aviso">
-                            <h4> ⭕ Cliente já está cadastrado!</h4>
-                        </div>
-                    <?php
-                    
-                }
+                $p->atualizarCliente($fnome, $fsobr, $femail, $fcpf, $fnasc, $fsexo, $ftel, $fcep, $frua, $fnum, $fbairro, $fest, $fcid);
+                ?>
+                <script>
+                    window.location.href="pesquisa_cliente.php"
+                </script>
+                <?php
             }
+
         }
     ?>
         <div class="card" style="margin: 40px;">
         <div class="card-body">
             <form method="POST">
                 <label for="fnome">Nome:</label><br>
-                <input type="text" id="fnome" name="fnome" placeholder="Nome" required value="<?php if(isset($res)){echo $res['fnome'];}?>"><br>
+                <input type="text" id="fnome" name="fnome" placeholder="Nome" value="<?php if(isset($res)){echo $res['fnome'];}?>" required ><br>
 
                 <label for="fsobr">Sobrenome:</label><br>
-                <input type="text" id="fsobr" name="fsobr" placeholder="Sobrenome" required ><br>
+                <input type="text" id="fsobr" name="fsobr" placeholder="Sobrenome" value="<?php if(isset($res)){echo $res['fsobr'];}?>" required ><br>
 
                 <label for="femail">E-mail:</label><br>
-                <input type="text" id="femail" name="femail" placeholder="E-mail" required ><br>
+                <input type="text" id="femail" name="femail" placeholder="E-mail" value="<?php if(isset($res)){echo $res['femail'];}?>" required ><br>
 
                 <label for="fcpf">CPF:</label><br>
-                <input type="text" id="fcpf" name="fcpf" placeholder="xxx.xxx.xxx-xx" required ><br>
+                <input type="text" id="fcpf" name="fcpf" placeholder="xxx.xxx.xxx-xx" value="<?php if(isset($res)){echo $res['fcpf'];}?>" required ><br>
 
                 <label for="fnasc">Data de Nascimento:</label><br>
-                <input type="date" id="fnasc" name="fnasc" required ><br>
+                <input type="date" id="fnasc" name="fnasc" value="<?php if(isset($res)){echo $res['fnasc'];}?>" required ><br>
 
-                <input type="radio" id="fsexo" name="fsexo" value="M">
+                <input type="radio" id="fsexo" name="fsexo" value="<?php if(isset($res)){echo $res['fsexo'];}?>">
                 <label for="Mas">Masculino</label>
-                <input type="radio" id="fsexo" name="fsexo" value="F">
+                <input type="radio" id="fsexo" name="fsexo" value="<?php if(isset($res)){echo $res['fsexo'];}?>">
                 <label for="Fem">Feminino</label>
-                <input type="radio" id="fsexo" name="fsexo" value="O">
+                <input type="radio" id="fsexo" name="fsexo" value="<?php if(isset($res)){echo $res['fsexo'];}?>">
                 <label for="Out">Outro</label><br>
 
                 <label for="ftel">Telefone:</label><br>
-                <input type="tel" id="ftel" name="ftel" placeholder="(xx)xxxxx-xxxx" required ><br>
-
+                <input type="tel" id="ftel" name="ftel" placeholder="(xx)xxxxx-xxxx" value="<?php if(isset($res)){echo $res['ftel'];}?>" required ><br>
+            
                 <label for="fcep">CEP:</label><br>
-                <input type="text" id="fcep" name="fcep" placeholder="xxxxx-xxx" required ><br>
+                <input type="text" id="fcep" name="fcep" placeholder="xxxxx-xxx" value="<?php if(isset($res)){echo $res['fcep'];}?>" required ><br>
 
                 <label for="frua">Rua:</label><br>
-                <input type="text" id="frua" name="frua" placeholder="R.Nome da Rua" required ><br>
+                <input type="text" id="frua" name="frua" placeholder="R.Nome da Rua" value="<?php if(isset($res)){echo $res['frua'];}?>" required ><br>
 
                 <label for="fnum">Número:</label><br>
-                <input type="text" id="fnum" name="fnum" placeholder="Num e complemento" required ><br>
+                <input type="text" id="fnum" name="fnum" placeholder="Num e complemento" value="<?php if(isset($res)){echo $res['fnum'];}?>" required ><br>
 
                 <label for="fbairro">Bairro:</label><br>
-                <input type="text" id="fbairro" name="fbairro" placeholder="Nome do bairro" required ><br>
+                <input type="text" id="fbairro" name="fbairro" placeholder="Nome do bairro" value="<?php if(isset($res)){echo $res['fbairro'];}?>" required ><br>
 
                 <label for="fest">Estado:</label><br>
-                <input type="text" id="fest" name="fest" placeholder="Estado"><br>
+                <input type="text" id="fest" name="fest" placeholder="Estado" value="<?php if(isset($res)){echo $res['fest'];}?>"><br>
 
                 <label for="fcid">Cidade:</label><br>
-                <input type="text" id="fcid" name="fcid" placeholder="Cidade"><br>
+                <input type="text" id="fcid" name="fcid" placeholder="Cidade" value="<?php if(isset($res)){echo $res['fcid'];}?>"><br>
 
 
                 <div><br>
-                    <button class="btn btn-dark" type="submit" value="Cadastrar"> Cadastrar</button>
+                <button class="btn btn-dark" type="submit" value="Atualizar"> Atualizar</button>
                 </div>
 
             </form>

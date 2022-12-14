@@ -43,14 +43,14 @@
         //BUSCAR DADOS DE UMA PESSOA
         public function buscarDadosCliente($fcpf){
             $res = array();
-            $cmd = $this->pdo->query("SELECT * FROM tb_cliente WHERE fcpf = $fcpf");
-            $res = $cmd->fetch(PDO::FETCH_ASSOC);
+            $cmd = $this->pdo->query("SELECT * FROM tb_cliente WHERE fcpf = '$fcpf'");
+            $res = $cmd->fetch(PDO::FETCH_ASSOC);//Comando FETCH serve para tranformar em array e o assoc é uma forma de economizar memoria pois não guarda a posição do array
             return $res;
         }
 
         //ATUALIZAR DADOS NO BANCO DE DADOS
-        public function atualizarDados(){
-
-        }
+        public function atualizarCliente($fnome, $fsobr, $femail, $fcpf, $fnasc, $fsexo, $ftel, $fcep, $frua, $fnum, $fbairro, $fest, $fcid){ 
+                $cmd = $this->pdo->query("UPDATE tb_cliente SET fnome = '$fnome', fsobr = '$fsobr', femail = '$femail', fnasc = '$fnasc', fsexo = '$fsexo', ftel = '$ftel', fcep = '$fcep', frua = '$frua', fnum = '$fnum', fbairro = '$fbairro', fest = '$fest', fcid = '$fcid'  WHERE fcpf = $fcpf");
+        }    
     }
 ?>

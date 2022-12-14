@@ -1,0 +1,11 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['uusuario'])){
+    ?>
+        <script>
+            window.location.href="index.php"
+        </script>
+    <?php
+    exit;
+    }
+?>

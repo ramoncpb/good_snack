@@ -1,3 +1,8 @@
+<?php
+    require_once'../classes/class-usuario.php';
+    $u = new Usuario("bd_gdsnack","localhost","root","");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -25,27 +30,42 @@
 <body style="background-color:beige;">
     <div class="card" style="margin: 40px;">
         <div class="card-body">
-            <form class="mx-auto">
+            <form class="mx-auto" method="POST">
                 <div class="mb-3">
                     <label for="exampleInputUser" class="form-label">Usuário</label>
-                    <input type="text" class="form-control" id="exampleInputUser" aria-describedby="userHelp">
+                    <input type="text" name="uusuario" class="form-control" id="exampleInputUser" aria-describedby="userHelp" minlength="6" maxlength="6">
                     <div id="userHelp" class="form-text">Entre com o seu nome de usuário</div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" name="usenha" class="form-control" id="exampleInputPassword1" maxlength="32">
                     <div id="userHelp" class="form-text">Entre com a senha referente ao usuário</div>
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Lembre-se de mim</label>
+                <div>
+                    <a href="novo_usuario.php"><strong>Cadastrar Usuário</strong></a>
                 </div>
-                <button type="submit" class="btn btn-dark">Entrar</button>
+                <input type="submit" class="btn btn-dark" style="margin-top:10px;" value="Entrar">
             </form>
         </div>
     </div>
 
+    <?php
+    //verificar se clicou no botão entrar
+    if(isset($_POST['uusuario'])){
 
+        $uusuario = addslashes($_POST['uusuario']);
+        $usenha = addslashes($_POST['usenha']);
+         if(!empty($uusuario) && !empty($usenha)){
+            
+            $u->logar($uusuario, $usenha);
+                
+        }else{
+            echo "E-mail e/ou senha incorreto";
+            //modal bootstrap
+        }
+         
+    }
+?>
 
 
 </body>
